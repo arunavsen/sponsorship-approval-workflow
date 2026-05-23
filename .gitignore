@@ -1,0 +1,19 @@
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+node_modules/
+dist/
+.vite/
+
+.env
+.env.*
+!.env.example
+
+appsettings.Production.json
+*.db
+*.sqlite
+
+NET Senior Developer Tech Assessment.pdf

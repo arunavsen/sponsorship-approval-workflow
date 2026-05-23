@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: sponsorship-postgres
+    environment:
+      POSTGRES_DB: sponsorship_approval
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - sponsorship-postgres:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: SponsorshipApproval.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=sponsorship_approval;Username=postgres;Password=postgres
+      Cors__AllowedOrigins__0: http://localhost:5173
+      Jwt__SigningKey: dev-only-sponsorship-approval-signing-key-change-for-production
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+volumes:
+  sponsorship-postgres:

@@ -1,4 +1,3 @@
-import { AlertCircle, Settings } from 'lucide-react';
 import type { Role } from '../../types';
 import { navItemsFor } from '../../utils';
 
@@ -34,15 +33,6 @@ export default function Sidebar({ role }: SidebarProps) {
           </a>
         ))}
       </nav>
-
-      <div className="mt-auto grid gap-1 p-3">
-        <a href="#help" className="flex items-center gap-3 rounded-md px-[14px] py-3 text-sm font-semibold text-muted no-underline">
-          <AlertCircle size={16} /> Help Center
-        </a>
-        <a href="#support" className="flex items-center gap-3 rounded-md px-[14px] py-3 text-sm font-semibold text-muted no-underline">
-          <Settings size={16} /> Support
-        </a>
-      </div>
     </aside>
   );
 }

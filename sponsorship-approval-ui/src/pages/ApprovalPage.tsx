@@ -1,4 +1,4 @@
-import { CircleDollarSign, ClipboardCheck, ClipboardList, Eye, ShieldCheck, SlidersHorizontal, XCircle } from 'lucide-react';
+import { CircleDollarSign, ClipboardCheck, ClipboardList, Eye, ShieldCheck, XCircle } from 'lucide-react';
 import { useApprovalQueue } from '../hooks/useApprovalQueue';
 import type { LoginResponse } from '../types';
 import { formatCurrency } from '../utils';
@@ -28,11 +28,6 @@ export default function ApprovalPage({ session, onError, mode }: ApprovalPagePro
           isManager
             ? 'Review and manage pending sponsorship requests.'
             : 'Complete final budget and finance review decisions.'
-        }
-        action={
-          <button className="inline-flex min-h-[38px] cursor-pointer items-center justify-center gap-2 rounded-[7px] border border-surface-line bg-white px-3 py-2 text-sm font-extrabold text-muted">
-            <SlidersHorizontal size={17} /> Filters
-          </button>
         }
       />
 

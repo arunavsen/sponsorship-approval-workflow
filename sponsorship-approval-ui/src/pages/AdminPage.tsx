@@ -1,4 +1,4 @@
-import { CheckCircle2, ClipboardList, Clock3, Eye, History, Settings, SlidersHorizontal } from 'lucide-react';
+import { CheckCircle2, ClipboardList, Clock3, Eye, History, Settings } from 'lucide-react';
 import { useAdminData } from '../hooks/useAdminData';
 import type { LoginResponse } from '../types';
 import { countByStatus } from '../utils';
@@ -48,12 +48,7 @@ export default function AdminPage({ session }: AdminPageProps) {
         className="grid gap-5 xl:grid-cols-[minmax(0,1.4fr)_minmax(320px,0.6fr)]"
       >
         <section className="rounded-lg border border-surface-line bg-surface-card p-[18px] shadow-panel">
-          <div className="mb-4 flex items-center justify-between gap-2.5">
-            <SectionTitle icon={<Eye size={20} />} title="All Requests" />
-            <button className="inline-flex min-h-[32px] cursor-pointer items-center justify-center gap-2 rounded-[7px] border border-surface-line bg-white px-[9px] py-1.5 text-sm font-extrabold text-muted">
-              <SlidersHorizontal size={15} /> Apply Filters
-            </button>
-          </div>
+          <SectionTitle icon={<Eye size={20} />} title="All Requests" />
           <RequestTable
             requests={requests}
             actions={(request) => (

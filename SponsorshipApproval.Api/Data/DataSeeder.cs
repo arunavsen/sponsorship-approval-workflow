@@ -14,15 +14,7 @@ public static class DataSeeder
 
         if (db.Database.IsRelational())
         {
-            var migrations = await db.Database.GetMigrationsAsync();
-            if (migrations.Any())
-            {
-                await db.Database.MigrateAsync();
-            }
-            else
-            {
-                await db.Database.EnsureCreatedAsync();
-            }
+            await db.Database.EnsureCreatedAsync();
         }
 
         if (!await db.Users.AnyAsync())

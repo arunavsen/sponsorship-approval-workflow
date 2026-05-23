@@ -9,7 +9,6 @@ using SponsorshipApproval.Api.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -90,7 +89,6 @@ var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
-app.MapOpenApi();
 
 app.UseHttpsRedirection();
 app.UseCors("Frontend");

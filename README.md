@@ -4,7 +4,7 @@ Full-stack technical assessment implementation for a simplified sponsorship requ
 
 ## Stack
 
-- Backend: ASP.NET Core Web API targeting .NET 10
+- Backend: ASP.NET Core Web API targeting .NET 8
 - Frontend: React, TypeScript, Vite
 - Database: PostgreSQL with EF Core
 - Auth: JWT with seeded local accounts
@@ -25,7 +25,7 @@ All seeded users use the password `Password123!`.
 
 Prerequisites:
 
-- .NET 10 SDK
+- .NET 8 SDK or newer
 - Node.js 20.12 or newer
 - Docker Desktop, if using the included PostgreSQL container
 

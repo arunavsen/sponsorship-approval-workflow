@@ -12,7 +12,7 @@ interface AppFrameProps {
 export default function AppFrame({ session, onLogout, children }: AppFrameProps) {
   return (
     <main className="grid min-h-screen bg-surface md:grid-cols-[280px_minmax(0,1fr)]">
-      <Sidebar role={session.role} />
+      <Sidebar />
       <section className="min-w-0">
         <Topbar session={session} onLogout={onLogout} />
         <div className="p-7">{children}</div>

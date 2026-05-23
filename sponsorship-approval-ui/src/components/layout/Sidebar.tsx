@@ -1,12 +1,8 @@
-import type { Role } from '../../types';
+import { NavLink } from 'react-router-dom';
 import { navItemsFor } from '../../utils';
 
-interface SidebarProps {
-  role: Role;
-}
-
-export default function Sidebar({ role }: SidebarProps) {
-  const navItems = navItemsFor(role);
+export default function Sidebar() {
+  const navItems = navItemsFor();
 
   return (
     <aside className="sticky top-0 flex h-screen flex-col border-r border-surface-line bg-surface-low">
@@ -18,19 +14,21 @@ export default function Sidebar({ role }: SidebarProps) {
       </div>
 
       <nav className="grid gap-1 px-3">
-        {navItems.map((item, index) => (
-          <a
+        {navItems.map((item) => (
+          <NavLink
             key={item.label}
-            href={`#${item.label.toLowerCase().replaceAll(' ', '-')}`}
-            className={`flex items-center gap-3 rounded-md px-[14px] py-3 text-sm font-semibold no-underline ${
-              index === 0
-                ? 'bg-secondary-soft text-primary shadow-inset-accent'
-                : 'text-muted'
-            }`}
+            to={item.to}
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-md px-[14px] py-3 text-sm font-semibold no-underline ${
+                isActive
+                  ? 'bg-secondary-soft text-primary shadow-inset-accent'
+                  : 'text-muted'
+              }`
+            }
           >
             {item.icon}
             <span>{item.label}</span>
-          </a>
+          </NavLink>
         ))}
       </nav>
     </aside>

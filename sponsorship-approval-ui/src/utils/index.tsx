@@ -1,36 +1,15 @@
 import type { ReactNode } from 'react';
-import {
-  ClipboardCheck,
-  FileText,
-  History,
-  LayoutDashboard,
-  Settings,
-} from 'lucide-react';
+import { LayoutDashboard } from 'lucide-react';
 import type { Role, SponsorshipRequest } from '../types';
 
 export interface NavItem {
   label: string;
   icon: ReactNode;
+  to: string;
 }
 
-export function navItemsFor(role: Role): NavItem[] {
-  if (role === 'Requestor') {
-    return [
-      { label: 'Dashboard', icon: <LayoutDashboard size={17} /> },
-      { label: 'Sponsorships', icon: <FileText size={17} /> },
-    ];
-  }
-  if (role === 'SystemAdmin') {
-    return [
-      { label: 'Dashboard', icon: <LayoutDashboard size={17} /> },
-      { label: 'Audit Logs', icon: <History size={17} /> },
-      { label: 'Settings', icon: <Settings size={17} /> },
-    ];
-  }
-  return [
-    { label: 'Dashboard', icon: <LayoutDashboard size={17} /> },
-    { label: 'Approvals', icon: <ClipboardCheck size={17} /> },
-  ];
+export function navItemsFor(): NavItem[] {
+  return [{ label: 'Dashboard', icon: <LayoutDashboard size={17} />, to: '/dashboard' }];
 }
 
 export function roleLabel(role: Role): string {

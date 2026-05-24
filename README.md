@@ -44,8 +44,10 @@ dotnet run --project SponsorshipApproval.Api
 
 The API defaults to:
 
-- Swagger: `https://localhost:7071/swagger`
-- HTTP fallback in Docker: `http://localhost:8080/swagger`
+- Local HTTP: `http://localhost:5169`
+- Local HTTPS (launch settings): `https://localhost:7235`
+- Swagger when running locally: `http://localhost:5169/swagger`
+- Docker / container HTTP: `http://localhost:8080/swagger`
 
 Run the frontend:
 
@@ -55,7 +57,9 @@ npm install
 npm run dev
 ```
 
-Create `sponsorship-approval-ui/.env` when pointing the UI at a deployed or Docker API:
+The frontend defaults to `http://localhost:5169` for the API when no `VITE_API_BASE_URL` is set.
+
+Create `sponsorship-approval-ui/.env` only when pointing the UI at a deployed, HTTPS, or Docker API:
 
 ```text
 VITE_API_BASE_URL=http://localhost:8080

@@ -1,16 +1,7 @@
-import { createContext, useContext, useState } from 'react';
+import { useState } from 'react';
 import type { ReactNode } from 'react';
 import type { LoginResponse } from '../types';
-
-export interface AuthState {
-  session: LoginResponse | null;
-  error: string;
-  login: (response: LoginResponse) => void;
-  logout: () => void;
-  setError: (message: string) => void;
-}
-
-const AuthContext = createContext<AuthState | null>(null);
+import { AuthContext } from './authContext';
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<LoginResponse | null>(() => {
@@ -35,10 +26,4 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       {children}
     </AuthContext.Provider>
   );
-}
-
-export function useAuth(): AuthState {
-  const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error('useAuth must be used within AuthProvider');
-  return ctx;
 }

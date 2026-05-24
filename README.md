@@ -132,9 +132,9 @@ npm run build
 
 ## Assessment Links To Provide
 
-- Frontend testing URL: add after Vercel deployment
-- Backend API URL: add after Render deployment
-- Swagger URL: `{Backend API URL}/swagger`
+- Frontend testing URL: [https://sponsorship-approval-workflow.vercel.app](https://sponsorship-approval-workflow.vercel.app)
+- Backend API URL: [https://sponsorship-approval-workflow.onrender.com](https://sponsorship-approval-workflow.onrender.com)
+- Swagger URL: [https://sponsorship-approval-workflow.onrender.com/swagger/index.html](https://sponsorship-approval-workflow.onrender.com/swagger/index.html)
 - Git repository link: [https://github.com/arunavsen/sponsorship-approval-workflow.git](https://github.com/arunavsen/sponsorship-approval-workflow.git)
 
 ## Tradeoffs

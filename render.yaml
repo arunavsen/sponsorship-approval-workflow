@@ -18,6 +18,6 @@ services:
           name: sponsorship-approval-db
           property: connectionString
       - key: Cors__AllowedOrigins__0
-        sync: false
+        value: https://*.vercel.app
       - key: Jwt__SigningKey
         generateValue: true

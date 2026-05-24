@@ -1,3 +1,8 @@
+databases:
+  - name: sponsorship-approval-db
+    databaseName: sponsorship_approval
+    user: sponsorship_approval_user
+
 services:
   - type: web
     name: sponsorship-approval-api
@@ -9,7 +14,9 @@ services:
       - key: ASPNETCORE_URLS
         value: http://+:8080
       - key: ConnectionStrings__DefaultConnection
-        sync: false
+        fromDatabase:
+          name: sponsorship-approval-db
+          property: connectionString
       - key: Cors__AllowedOrigins__0
         sync: false
       - key: Jwt__SigningKey

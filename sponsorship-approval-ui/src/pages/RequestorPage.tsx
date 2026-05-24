@@ -1,4 +1,4 @@
-import { CheckCircle2, CircleDollarSign, Clock3, ClipboardList, FileText, Plus, Send, XCircle } from 'lucide-react';
+import { CheckCircle2, CircleDollarSign, Clock3, ClipboardList, FileText, Send, XCircle } from 'lucide-react';
 import { useRequests } from '../hooks/useRequests';
 import { api } from '../services/api';
 import type { LoginResponse } from '../types';
@@ -26,11 +26,6 @@ export default function RequestorPage({ session, onError }: RequestorPageProps) 
       <PageHeader
         title="My Sponsorship Requests"
         description="Track and manage your corporate sponsorship applications."
-        action={
-          <button className="inline-flex min-h-[38px] cursor-pointer items-center justify-center gap-2 rounded-[7px] border border-transparent bg-primary px-3 py-2 text-sm font-extrabold text-white hover:bg-primary-strong">
-            <Plus size={17} /> New Request
-          </button>
-        }
       />
 
       <MetricGrid>

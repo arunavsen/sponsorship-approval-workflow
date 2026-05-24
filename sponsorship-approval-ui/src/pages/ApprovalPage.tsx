@@ -1,4 +1,4 @@
-import { CircleDollarSign, ClipboardCheck, ClipboardList, Eye, ShieldCheck, XCircle } from 'lucide-react';
+import { CircleDollarSign, ClipboardCheck, ClipboardList, Eye, ShieldCheck } from 'lucide-react';
 import { useApprovalQueue } from '../hooks/useApprovalQueue';
 import type { LoginResponse } from '../types';
 import { formatCurrency } from '../utils';
@@ -45,7 +45,6 @@ export default function ApprovalPage({ session, onError, mode }: ApprovalPagePro
           icon={<ShieldCheck size={18} />}
           tone="green"
         />
-        <MetricCard label="Rejected Today" value="0" icon={<XCircle size={18} />} tone="red" />
       </MetricGrid>
 
       <section

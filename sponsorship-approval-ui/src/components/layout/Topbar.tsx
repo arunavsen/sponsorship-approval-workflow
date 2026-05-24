@@ -1,4 +1,4 @@
-import { Bell, LogOut } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import type { LoginResponse } from '../../types';
 import { roleLabel } from '../../utils';
 
@@ -11,7 +11,6 @@ export default function Topbar({ session, onLogout }: TopbarProps) {
   return (
     <header className="flex min-h-[64px] items-center justify-end gap-4 border-b border-surface-line bg-surface/95 px-7 backdrop-blur-md">
       <div className="flex items-center gap-2.5 text-sm font-semibold text-muted">
-        <Bell size={17} />
         <span className="inline-grid h-7 w-7 place-items-center rounded-full bg-primary text-xs font-extrabold text-white">
           {session.displayName.slice(0, 1)}
         </span>

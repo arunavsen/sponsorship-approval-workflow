@@ -135,7 +135,7 @@ npm run build
 - Frontend testing URL: add after Vercel deployment
 - Backend API URL: add after Render deployment
 - Swagger URL: `{Backend API URL}/swagger`
-- Git repository link: add after pushing the repo
+- Git repository link: [https://github.com/arunavsen/sponsorship-approval-workflow.git](https://github.com/arunavsen/sponsorship-approval-workflow.git)
 
 ## Tradeoffs
 
